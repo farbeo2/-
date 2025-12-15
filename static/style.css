@@ -1,1 +1,123 @@
+/* =======================
+   1. Подключение шрифта
+======================= */
+/* Используем современный Google Font "Poppins" для всего сайта */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
+body {
+    font-family: 'Poppins', sans-serif; /* основной шрифт */
+    background-color: #f4f7f9;          /* светлый фон для всей страницы */
+    color: #333;                        /* темный текст для контраста */
+    margin: 0;
+    padding: 0;
+}
+
+/* =======================
+   2. Контейнер
+======================= */
+.container {
+    max-width: 900px;    /* ограничиваем ширину блока для удобства чтения */
+    margin: 50px auto;   /* центрируем по горизонтали и добавляем отступ сверху */
+    padding: 20px;       /* внутренние отступы */
+}
+
+/* =======================
+   3. Заголовки
+======================= */
+h1 {
+    font-weight: 700;     /* жирный заголовок */
+    font-size: 2.5em;     /* крупный размер */
+    text-align: center;   /* по центру страницы */
+    margin-bottom: 40px;  /* отступ снизу */
+    color: #2c3e50;       /* темно-синий оттенок */
+}
+
+/* =======================
+   4. Карточки (блоки с результатами)
+======================= */
+.card {
+    background-color: #ffffff;         /* белый фон */
+    border-radius: 15px;               /* закруглённые углы */
+    padding: 25px;                     /* внутренние отступы */
+    margin-bottom: 25px;               /* расстояние между карточками */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* мягкая тень */
+    transition: transform 0.2s, box-shadow 0.2s; /* плавная анимация при наведении */
+}
+
+/* Эффект при наведении на карточку */
+.card:hover {
+    transform: translateY(-5px);       /* немного поднимаем блок */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15); /* тень становится глубже */
+}
+
+/* Заголовок внутри карточки */
+.card-title {
+    font-weight: 600;                  /* немного полужирный */
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    color: #34495e;                    /* серо-синий оттенок */
+}
+
+/* =======================
+   5. Кнопки
+======================= */
+button, .btn {
+    background-color: #3498db;         /* приятный синий */
+    color: #fff;                        /* белый текст */
+    border: none;
+    border-radius: 12px;               /* закруглённые углы */
+    padding: 12px 25px;                /* внутренние отступы */
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s; /* плавная анимация */
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3); /* лёгкая тень */
+}
+
+/* Наведение на кнопку */
+button:hover, .btn:hover {
+    background-color: #2980b9;         /* более тёмный синий */
+    transform: translateY(-2px);       /* небольшое поднятие */
+    box-shadow: 0 8px 20px rgba(52, 152, 219, 0.4); /* тень глубже */
+}
+
+/* =======================
+   6. Формы
+======================= */
+input, select {
+    width: 100%;                        /* занимают всю ширину блока */
+    padding: 10px 15px;                 /* внутренние отступы */
+    margin-bottom: 20px;                /* расстояние между полями */
+    border: 1px solid #ccc;             /* светлая граница */
+    border-radius: 10px;                /* закруглённые углы */
+    font-size: 1em;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* Фокус на поле ввода */
+input:focus, select:focus {
+    border-color: #3498db;             /* синий контур */
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
+    outline: none;                      /* убираем стандартную обводку */
+}
+
+/* =======================
+   7. Списки рекомендаций
+======================= */
+ul {
+    padding-left: 20px;                 /* отступ слева для маркеров */
+}
+
+li {
+    margin-bottom: 10px;                /* расстояние между пунктами */
+    line-height: 1.5em;                 /* удобочитаемый интервал */
+}
+
+/* =======================
+   8. Адаптивность (ПК)
+======================= */
+@media (max-width: 1024px) {
+    .container {margin: 30px 15px;             /* уменьшаем отступы для экранов <=1024px */
+        padding: 15px;
+    }
+}
