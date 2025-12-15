@@ -1,0 +1,58 @@
+<!-- templates/index.html -->
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>PC Performance Checker</title>
+</head>
+<body>
+  <h2>Проверка производительности ПК — ввод данных</h2>
+  <form action="/analyze" method="post">
+    <label>CPU:
+      <select name="cpu">
+        {% for c in cpus %}
+          <option value="{{c}}">{{c}}</option>
+        {% endfor %}
+      </select>
+    </label>
+    <br><br>
+    <label>GPU:
+      <select name="gpu">
+        {% for g in gpus %}
+          <option value="{{g}}">{{g}}</option>
+        {% endfor %}
+      </select>
+    </label>
+    <br><br>
+    <label>ОЗУ (GB):
+      <input type="number" name="ram" value="16" min="2" max="128">
+    </label>
+    <br><br>
+    <label>Накопитель:
+      <select name="storage">
+        <option value="ssd">SSD</option>
+        <option value="hdd">HDD</option>
+      </select>
+    </label>
+    <br><br>
+    <label>Разрешение:
+      <select name="resolution">
+        {% for r in resolutions %}
+          <option value="{{r}}">{{r}}</option>
+        {% endfor %}
+      </select>
+    </label>
+    <br><br>
+    <label>Графика:
+      <select name="quality">
+        <option value="low">Low</option>
+        <option value="medium" selected>Medium</option>
+        <option value="high">High</option>
+        <option value="ultra">Ultra</option>
+      </select>
+    </label>
+    <br><br>
+    <button type="submit">Оценить</button>
+  </form>
+</body>
+</html>

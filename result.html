@@ -1,0 +1,30 @@
+<!-- templates/result.html -->
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Результат анализа</title>
+</head>
+<body>
+  <h2>Результаты анализа</h2>
+  <p><strong>CPU:</strong> {{ result.cpu_model }}</p>
+  <p><strong>GPU:</strong> {{ result.gpu_model }}</p>
+  <p><strong>ОЗУ:</strong> {{ result.ram }} ГБ</p>
+  <p><strong>Накопитель:</strong> {{ result.storage }}</p>
+  <p><strong>Разрешение:</strong> {{ result.resolution }} ({{ result.quality }})</p>
+
+  <h3>Оценка</h3>
+  <p>Примерные FPS: <strong>{{ result.fps_est }}</strong></p>
+  <p>Анализ узкого места: <strong>{{ result.bottleneck }}</strong></p>
+  <p>Цена/производительность (CPU, GPU): <strong>{{ result.cpu_pp }}, {{ result.gpu_pp }}</strong></p>
+
+  <h3>Рекомендации</h3>
+  <ul>
+    {% for r in result.recs %}
+      <li>{{ r }}</li>
+    {% endfor %}
+  </ul>
+
+  <p><a href="/">Новая проверка</a></p>
+</body>
+</html>
