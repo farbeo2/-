@@ -65,7 +65,7 @@ def price_performance(cpu_score, cpu_price, gpu_score, gpu_price):
 def index():
     return render_template("index.html", cpus=CPUS.keys(), gpus=GPUS.keys(), resolutions=RESOLUTION_SCALE.keys())
 
-@app.route("/analyze", methods=["POST"])
+@app.route("/analyze", methods=["POST","GET"])
 def analyze():
     cpu_model = request.form.get("cpu")
     gpu_model = request.form.get("gpu")
@@ -120,4 +120,5 @@ def analyze():
     return render_template("result.html", result=result)
 
 if __name__ == "__main__":
+
     app.run(debug=True)
